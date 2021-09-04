@@ -1,0 +1,4 @@
+TrialNumber,Probability,Reward,TaskLevel,CompleteStatus,WinningStatus
+1,12,4.25,0,1,0
+2,50,2.49,1,1,0
+3,88,2.8,1,1,1
