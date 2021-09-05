@@ -142,12 +142,12 @@ class Task(tk.Frame):
                 global complete_status
                 complete_status = True
                 self.after(0, lambda: master.switch_frame(CompleteStatusPage))
-                master.unbind("<space>", increase_progress)
+                master.unbind("<KeyRelease-space>", increase_progress)
             else:
                 progress.step(1)
 
         global increase_progress
-        increase_progress = master.bind("<space>", progress_increase)
+        increase_progress = master.bind("<KeyRelease-space>", progress_increase)
 
         master.set_frame_switch_status(False)
         self.after(maximum_time, lambda: self.switch_to_FailPage(master))
@@ -158,7 +158,7 @@ class Task(tk.Frame):
             global complete_status
             complete_status = False
             self.after(0, lambda: master.switch_frame(CompleteStatusPage))
-            master.unbind("<space>", increase_progress)
+            master.unbind("<KeyRelease-space>", increase_progress)
 
 class CompleteStatusPage(tk.Frame):
     def __init__(self, master):
