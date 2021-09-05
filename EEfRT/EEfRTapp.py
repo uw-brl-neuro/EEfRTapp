@@ -8,7 +8,9 @@ header = ['TrialNumber', 'Probability', 'Reward', 'TaskLevel', 'CompleteStatus',
 data_collection = []
 
 import yaml
-with open('configuration.yaml', 'r') as d:
+import os
+file_path = os.path.join(os.path.dirname(__file__), "configuration.yaml")
+with open(f'{file_path}', 'r') as d:
     config = yaml.safe_load(d)
 
 width_spec = 1200
