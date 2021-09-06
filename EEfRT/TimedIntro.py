@@ -5,7 +5,7 @@ import Trial
 import PracticeIntro
 
 # Create the intro page to the timed trial session
-# Provides option to restart the practice session altog
+# Provides option to redo the last practice trial, thereby giving the user one more practice trial
 class TimedTrialIntro(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -32,13 +32,10 @@ class TimedTrialIntro(tk.Frame):
                                   command=lambda: master.switch_frame(Trial.TrialCue))
         btn_to_trial.grid(row = 2, column=2)
 
+    # Redo the last practice trial
     def one_more_practice(self, master):
-        print(PracticeIntro.number_of_practice)
         PracticeIntro.number_of_practice -= 1
-        print(PracticeIntro.number_of_practice)
-        print(Trial.trial_number)
         Trial.trial_number -= 1
-        print(Trial.trial_number)
         master.switch_frame(PracticeIntro.PracticeTrial)
 
 
