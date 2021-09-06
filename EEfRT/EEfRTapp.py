@@ -5,15 +5,23 @@ import Trial
 
 # Define a csv file that collection the information of each trial
 import csv
-header = ['TrialNumber', 'Probability', 'Reward', 'TaskLevel', 'CompleteStatus', 'WinningStatus']
+header = ['TrialNumber', 'Probability', 'TaskLevel', 'Reward', 'CompleteStatus', 'WinningStatus']
 data_collection = []
 
 # Read a yaml file to configure the application accordingly
 import yaml
 import os
-file_path = os.path.join(os.path.dirname(__file__), "configuration.yaml")
-with open(f'{file_path}', 'r') as d:
+yaml_file_path = os.path.join(os.path.dirname(__file__), "configuration.yaml")
+with open(f'{yaml_file_path}', 'r') as d:
     config = yaml.safe_load(d)
+
+csv_file_path = os.path.join(os.path.dirname(__file__), "trailResult.csv")
+if os.path.isfile(csv_file_path) is True:
+    with open(f'{csv_file_path}', 'r', newline = '') as oldf:
+        reader = csv.reader(oldf)
+        old_header = next(reader)
+        for row in reader:
+            data_collection.append(row)
 
 # Define the width and height size of the window of the application
 width_spec = config["width_spec"]
@@ -108,8 +116,7 @@ app.geometry(size_spec)
 app.mainloop()
 
 # Create a csv file based on the data collected throughout the experiment
-file_path2 = os.path.join(os.path.dirname(__file__), "trailResult.csv")
-with open(f'{file_path2}', 'w', newline = '') as f:
+with open(f'{csv_file_path}', 'w', newline ='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     writer.writerows(data_collection)
