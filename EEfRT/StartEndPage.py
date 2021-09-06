@@ -3,6 +3,8 @@ from tkinter import ttk
 from tkinter import font as tkFont
 import PracticeIntro
 
+global participant_name
+
 # Create the welcome page of this EEfRT app. The very first page that pops up when open the app
 class StartPage(tk.Frame):
     def __init__(self, master):
@@ -18,11 +20,20 @@ class StartPage(tk.Frame):
                         text = "thank you for participating", font  = tkFont.Font(size = 20))
         lbl2.grid(row = 1, column = 0)
 
+        name_entry = tk.Entry(subFrame)
+        name_entry.grid(row = 2, column = 0)
+
         # Button to the introductory page of the practice trial session
         btn_to_page1 = ttk.Button(subFrame,
-                                  text = "Next Page",
-                                  command = lambda : master.switch_frame(PracticeIntro.PracticeIntro))
-        btn_to_page1.grid(row = 2, column = 0)
+                                  text = "Confirm",
+                                  command = lambda : self.confirm_name(master, name_entry))
+        btn_to_page1.grid(row = 3, column = 0)
+
+    def confirm_name(self, master, entry):
+        global participant_name
+        participant_name = entry.get()
+        master.switch_frame(PracticeIntro.PracticeIntro)
+
 
 # Create the ending page of this EEfRT app. The very last page of this app. Provides option to
 # restarts the experiment, which leads back to the start page

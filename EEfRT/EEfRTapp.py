@@ -5,7 +5,7 @@ import Trial
 
 # Define a csv file that collection the information of each trial
 import csv
-header = ['TrialNumber', 'Probability', 'TaskLevel', 'Reward', 'CompleteStatus', 'WinningStatus']
+header = ['Name', 'TrialNumber', 'TimeStamp', 'Probability', 'TaskLevel', 'Reward', 'CompleteStatus', 'WinningStatus']
 data_collection = []
 
 # Read a yaml file to configure the application accordingly
@@ -94,6 +94,7 @@ class EEfRTapp(tk.Tk):
         global data
         if Trial.start_collect is True:
             data = []
+            data.append(StartEndPage.participant_name)
 
     # Record the input data and store it in the set of new data created
     # at the beginning of each trial
@@ -102,7 +103,10 @@ class EEfRTapp(tk.Tk):
     def record_data(self, input):
         global data
         if Trial.start_collect is True:
-            data.append(f'{input + 0}')
+            if type(input) is bool:
+                data.append(f'{input + 0}')
+            else:
+                data.append(f'{input}')
 
     # Merge the data collected in this trial with the records of previous trials
     def data_merge(self):

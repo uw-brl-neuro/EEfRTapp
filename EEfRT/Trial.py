@@ -44,6 +44,11 @@ class TrialCue(tk.Frame):
         master.new_data()
         master.record_data(trial_number)
 
+        import time
+        ts = time.time()
+        import datetime
+        master.record_data(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+
         lbl = tk.Label(subFrame,
                        text= " + ",
                        font=tkFont.Font(size=50, weight = "bold"))

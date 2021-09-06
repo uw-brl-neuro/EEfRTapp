@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="25b4cb23-0e62-498d-bb61-1c4ce8861963" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/StartEndPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/StartEndPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/Trial.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/Trial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/configuration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/configuration.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/trailResult.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +77,23 @@
       <workItem from="1630801018435" duration="262000" />
       <workItem from="1630803306298" duration="6901000" />
       <workItem from="1630941331062" duration="2980000" />
+      <workItem from="1630961088510" duration="1549000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EEfRTapp$EEfRTapp.coverage" NAME="EEfRTapp Coverage Results" MODIFIED="1630800447351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EEfRT" />
