@@ -1,4 +1,6 @@
 ---
+ width_spec: 1200
+ height_spec: 800
  maximum_practice: 1
  maximum_time: 30
  probability: [12, 50, 88]

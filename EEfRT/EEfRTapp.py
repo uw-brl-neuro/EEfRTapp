@@ -16,9 +16,9 @@ with open(f'{file_path}', 'r') as d:
     config = yaml.safe_load(d)
 
 # Define the width and height size of the window of the application
-width_spec = 1200
-heigth_spec = 800
-size_spec = f'{width_spec}x{heigth_spec}'
+width_spec = config["width_spec"]
+height_spec = config["height_spec"]
+size_spec = f'{width_spec}x{height_spec}'
 
 # Initialize variables based on configuration
 maximum_pratice = config["maximum_practice"]
