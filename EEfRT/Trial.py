@@ -11,7 +11,6 @@ import TimedIntro
 def reward_generator(master):
     global current_reward
     current_reward = random.uniform(1.24, 4.30).__round__(2)
-    master.record_data(current_reward)
     return current_reward
 
 def probability_generator(master):
@@ -123,6 +122,7 @@ class Task(tk.Frame):
             maximum_level = 100
             maximum_time = 20500
 
+        master.record_data(current_reward)
 
         global indicator
         indicator = tk.IntVar(value = 0)
@@ -212,8 +212,7 @@ class WinningStatusPage(tk.Frame):
 
         if PracticeIntro.number_of_practice < master.get_maximum_practice():
             self.after(1500, lambda: master.switch_frame(PracticeIntro.PracticeTrial))
-        elif PracticeIntro.number_of_practice == master.get_maximum_practice():
-            PracticeIntro.number_of_practice += 1
+        elif PracticeIntro.number_of_practice == master.get_maximum_practice() and trial_number <= 0:
             self.after(1500, lambda: master.switch_frame(TimedIntro.TimedTrialIntro))
         elif master.get_current_time() - start_time > master.get_maximum_time():
             self.after(1500, lambda: master.switch_frame(StartEndPage.EndPage))

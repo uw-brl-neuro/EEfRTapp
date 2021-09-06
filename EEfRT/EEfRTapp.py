@@ -108,7 +108,8 @@ app.geometry(size_spec)
 app.mainloop()
 
 # Create a csv file based on the data collected throughout the experiment
-with open('trailResult.csv', 'w', newline = '') as f:
+file_path2 = os.path.join(os.path.dirname(__file__), "trailResult.csv")
+with open(f'{file_path2}', 'w', newline = '') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     writer.writerows(data_collection)

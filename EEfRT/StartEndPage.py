@@ -3,7 +3,7 @@ from tkinter import ttk
 from tkinter import font as tkFont
 import PracticeIntro
 
-# The welcome page of this EEfRT app. The very first page that pops up when open the app
+# Create the welcome page of this EEfRT app. The very first page that pops up when open the app
 class StartPage(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -24,7 +24,7 @@ class StartPage(tk.Frame):
                                   command = lambda : master.switch_frame(PracticeIntro.PracticeIntro))
         btn_to_page1.grid(row = 2, column = 0)
 
-# The ending page of this EEfRT app. The very last page of this app. Provides option to
+# Create the ending page of this EEfRT app. The very last page of this app. Provides option to
 # restarts the experiment, which leads back to the start page
 class EndPage(tk.Frame):
     def __init__(self, master):
