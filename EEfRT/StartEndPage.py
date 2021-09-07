@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import font as tkFont
 import PracticeIntro
 
+# The name of the participant
 global participant_name
 
 # Create the welcome page of this EEfRT app. The very first page that pops up when open the app
@@ -29,6 +30,7 @@ class StartPage(tk.Frame):
                                   command = lambda : self.confirm_name(master, name_entry))
         btn_to_page1.grid(row = 3, column = 0)
 
+    # When confirm button is hit, store the name entered by the participant
     def confirm_name(self, master, entry):
         global participant_name
         participant_name = entry.get()

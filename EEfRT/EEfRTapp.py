@@ -15,6 +15,7 @@ yaml_file_path = os.path.join(os.path.dirname(__file__), "configuration.yaml")
 with open(f'{yaml_file_path}', 'r') as d:
     config = yaml.safe_load(d)
 
+# Read and store the data if there exists a previous data file
 csv_file_path = os.path.join(os.path.dirname(__file__), "trailResult.csv")
 if os.path.isfile(csv_file_path) is True:
     with open(f'{csv_file_path}', 'r', newline = '') as oldf:
@@ -32,6 +33,8 @@ size_spec = f'{width_spec}x{height_spec}'
 maximum_pratice = config["maximum_practice"]
 maximum_time = config["maximum_time"]
 probability = config["probability"]
+reward_lowerbound = config["reward_lowerbound"]
+reward_higherbound = config["reward_higherbound"]
 
 
 # Create an EEfRT application
@@ -88,6 +91,12 @@ class EEfRTapp(tk.Tk):
     def get_probability(self):
         return probability
 
+    def get_reward_lowerbound(self):
+        return reward_lowerbound
+
+    def get_reward_higherbound(self):
+        return reward_higherbound
+
     # Create a set of new data for a trial
     # It checks if data needs to be collected in current state
     def new_data(self):
@@ -103,6 +112,7 @@ class EEfRTapp(tk.Tk):
     def record_data(self, input):
         global data
         if Trial.start_collect is True:
+            # boolean is recorded as 0 (False) or 1 (True)
             if type(input) is bool:
                 data.append(f'{input + 0}')
             else:

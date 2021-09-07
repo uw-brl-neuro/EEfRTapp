@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/EEfRT/StartEndPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/StartEndPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/Trial.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/Trial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/configuration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/configuration.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/trailResult.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,7 @@
       <workItem from="1630801018435" duration="262000" />
       <workItem from="1630803306298" duration="6901000" />
       <workItem from="1630941331062" duration="2980000" />
-      <workItem from="1630961088510" duration="1549000" />
+      <workItem from="1630961088510" duration="2669000" />
     </task>
     <servers />
   </component>

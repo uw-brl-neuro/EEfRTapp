@@ -7,28 +7,35 @@ import PracticeIntro
 import StartEndPage
 import TimedIntro
 
-
+# Generate a reward based on the range given by the configuration
 def reward_generator(master):
     global current_reward
-    current_reward = random.uniform(1.24, 4.30).__round__(2)
+    current_reward = random.uniform(master.get_reward_lowerbound(), master.get_reward_higherbound()).__round__(2)
     return current_reward
 
+# Generate the probability of winning the current trial based on the configuration
 def probability_generator(master):
     global probability_to_win
     probability_to_win = random.choice(master.get_probability())
     master.record_data(probability_to_win)
     return probability_to_win
 
+# Store the level of current task, 0 is easy, 1 is hard
 global task_level
 
+# Store the completeness of current trial, 0 is failed, 1 is success
 global complete_status
 
+# Store the winning status of current trial, 0 is lose, 1 is win
 global winning_status
 
+# Store the start time of current trial, using time.time() format
 global start_time
 
+# Store the status of data collection phase, False is don't collect, True is collect
 global start_collect
 
+# Store the number of current trial
 global trial_number
 
 class TrialCue(tk.Frame):
