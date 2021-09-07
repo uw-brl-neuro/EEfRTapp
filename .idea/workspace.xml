@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b4cb23-0e62-498d-bb61-1c4ce8861963" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/StartEndPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/StartEndPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/Trial.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/Trial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/configuration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/configuration.yaml" afterDir="false" />
     </list>
@@ -76,7 +74,7 @@
       <workItem from="1630801018435" duration="262000" />
       <workItem from="1630803306298" duration="6901000" />
       <workItem from="1630941331062" duration="2980000" />
-      <workItem from="1630961088510" duration="2669000" />
+      <workItem from="1630961088510" duration="3329000" />
     </task>
     <servers />
   </component>
