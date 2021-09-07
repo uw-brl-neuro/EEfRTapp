@@ -38,6 +38,7 @@ global start_collect
 # Store the number of current trial
 global trial_number
 
+# Create a page for the cue of next trial with a single "+" sign in the middle of the screen
 class TrialCue(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -45,12 +46,14 @@ class TrialCue(tk.Frame):
         subFrame = tk.Frame(master=self)
         subFrame.pack()
 
+        # Increase the trial number by 1
         global trial_number
         trial_number += 1
 
         master.new_data()
         master.record_data(trial_number)
 
+        # Record the current time as time stamp
         import time
         ts = time.time()
         import datetime
@@ -63,6 +66,8 @@ class TrialCue(tk.Frame):
 
         self.after(500, lambda: master.switch_frame(TrialChoose))
 
+# Creat a page for the participant to choose easy or hard trial
+# If idle for certain amount of time, it will automatically choose one option
 class TrialChoose(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -120,19 +125,16 @@ class Task(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
 
-        maximum_level = 30
-        maximum_time = 6500
-
         global task_level
         global current_reward
 
         if task_level == 0:
             current_reward = 1
             maximum_level = 30
-            maximum_time = 6500
-        elif task_level == 1:
+            time_limit = master.get_easy_time_limit()
+        else:
             maximum_level = 100
-            maximum_time = 20500
+            time_limit = master.get_hard_time_limit()
 
         master.record_data(current_reward)
 
@@ -162,7 +164,7 @@ class Task(tk.Frame):
         increase_progress = master.bind("<KeyRelease-space>", progress_increase)
 
         master.set_frame_switch_status(False)
-        self.after(maximum_time, lambda: self.switch_to_FailPage(master))
+        self.after(time_limit, lambda: self.switch_to_FailPage(master))
 
 
     def switch_to_FailPage(self, master):
