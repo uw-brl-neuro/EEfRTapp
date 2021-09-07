@@ -23,7 +23,7 @@ class TimedTrialIntro(tk.Frame):
 
 
         btn_to_PracticeTrial = ttk.Button(subFrame,
-                                          text="Restart Practice",
+                                          text="One More Practice",
                                           command=lambda: self.one_more_practice(master))
         btn_to_PracticeTrial.grid(row=2, column=0)
 

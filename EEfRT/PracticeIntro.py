@@ -15,7 +15,7 @@ class PracticeIntro(tk.Frame):
         subFrame = tk.Frame(master=self)
         subFrame.pack()
 
-        # Do not collect data from the trial at this phae
+        # Do not collect data from the trial at this phase
         Trial.start_collect = False
         # Exclude the number of practice trials from the count of total trials
         Trial.trial_number = 0 - master.get_maximum_practice()

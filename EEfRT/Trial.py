@@ -136,10 +136,10 @@ class Task(tk.Frame):
         if task_level == 0:
             current_reward = 1
             maximum_level = 30
-            time_limit = master.get_easy_time_limit()
+            time_limit = master.get_easy_time_limit() * 1000 - 500
         else:
             maximum_level = 100
-            time_limit = master.get_hard_time_limit()
+            time_limit = master.get_hard_time_limit() * 1000 - 500
 
         # Record the reward level of this trial
         master.record_data(current_reward)
