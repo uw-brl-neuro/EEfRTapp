@@ -97,8 +97,10 @@ class TrialChoose(tk.Frame):
         btn_to_HardTask.grid(row=2, column=2)
 
         master.set_frame_switch_status(False)
+        # Automatically choose a level for participant since no decision has been made within time limit
         self.after(4500, lambda: self.switch_to_Task(master))
 
+    # Automatically choose a task level
     def switch_to_Task(self, master):
         if master.get_frame_swtich_status() is False:
             global task_level
@@ -106,6 +108,7 @@ class TrialChoose(tk.Frame):
             master.record_data(task_level)
             self.after(0, lambda: master.switch_frame(Task))
 
+    # Switch to easy task
     def swtich_to_EasyTask(self, master):
         global task_level
         task_level = 0
@@ -113,6 +116,7 @@ class TrialChoose(tk.Frame):
         master.record_data(task_level)
         self.after(0, lambda: master.switch_frame(Task))
 
+    # Switch to hard task
     def swtich_to_HardTask(self, master):
         global task_level
         task_level = 1
@@ -120,7 +124,7 @@ class TrialChoose(tk.Frame):
         master.record_data(task_level)
         self.after(0, lambda: master.switch_frame(Task))
 
-
+# Create the page for the task with a progress bar
 class Task(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -128,6 +132,7 @@ class Task(tk.Frame):
         global task_level
         global current_reward
 
+        # Decide the reward and progress bar level based on the difficulty of the trial
         if task_level == 0:
             current_reward = 1
             maximum_level = 30
@@ -136,6 +141,7 @@ class Task(tk.Frame):
             maximum_level = 100
             time_limit = master.get_hard_time_limit()
 
+        # Record the reward level of this trial
         master.record_data(current_reward)
 
         global indicator
@@ -160,13 +166,15 @@ class Task(tk.Frame):
             else:
                 progress.step(1)
 
+        # Use space bar to increase progress. Make sure the button is pressed instead of just hold
         global increase_progress
         increase_progress = master.bind("<KeyRelease-space>", progress_increase)
 
+        # If the participants spend more time than the limit allowed, switch to failed page
         master.set_frame_switch_status(False)
         self.after(time_limit, lambda: self.switch_to_FailPage(master))
 
-
+    # Swtich to failed page
     def switch_to_FailPage(self, master):
         if master.get_frame_swtich_status() is False:
             global complete_status
@@ -174,6 +182,8 @@ class Task(tk.Frame):
             self.after(0, lambda: master.switch_frame(CompleteStatusPage))
             master.unbind("<KeyRelease-space>", increase_progress)
 
+# Create a page that display the completeness status of current trial,
+# based on whether the participant finish the task or not
 class CompleteStatusPage(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -181,6 +191,7 @@ class CompleteStatusPage(tk.Frame):
         subFrame = tk.Frame(master=self)
         subFrame.pack()
 
+        # Record the completeness status of current trial
         master.record_data(complete_status)
 
         lbl = tk.Label(subFrame,
@@ -188,6 +199,7 @@ class CompleteStatusPage(tk.Frame):
         lbl.grid(row = 0, column = 0)
 
         if complete_status is True:
+            # Decide whether the participant win this trial based on the given probability
             if random.randint(0, 100) <= probability_to_win:
                 global  winning_status
                 winning_status = True
@@ -198,7 +210,7 @@ class CompleteStatusPage(tk.Frame):
 
         self.after(1500, lambda: master.switch_frame(WinningStatusPage))
 
-
+    # Convert the completeness status (False or True) to word (incomplete or complete)
     def status_to_string(self):
         global complete_status
         if complete_status is True:
@@ -207,6 +219,8 @@ class CompleteStatusPage(tk.Frame):
             status_in_string = "failed"
         return status_in_string
 
+# Create a page to show the winning status of current trial,
+# based on whether or not the participant win this trial
 class WinningStatusPage(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -214,7 +228,9 @@ class WinningStatusPage(tk.Frame):
         subFrame = tk.Frame(master=self)
         subFrame.pack()
 
+        # Record the winning status of the current trial
         master.record_data(winning_status)
+        # Merge the information of this trial to the collection of data of this timed trial session
         master.data_merge()
 
         global status_in_string
@@ -224,6 +240,8 @@ class WinningStatusPage(tk.Frame):
                        text= f"{self.status_to_string()}", font=tkFont.Font(size=25))
         lbl.grid(row=0, column=0)
 
+        # Decide the next page to display based on the phase (practice session/timed trial session/ending)
+        # of the experiment
         if PracticeIntro.number_of_practice < master.get_maximum_practice():
             self.after(1500, lambda: master.switch_frame(PracticeIntro.PracticeTrial))
         elif PracticeIntro.number_of_practice == master.get_maximum_practice() and trial_number <= 0:
@@ -233,6 +251,7 @@ class WinningStatusPage(tk.Frame):
         else:
             self.after(1500, lambda: master.switch_frame(TrialCue))
 
+    # Convert the winning status (False or True) to word (did not win or win(with reward amount))
     def status_to_string(self):
         global status_in_string
         if winning_status is True:
