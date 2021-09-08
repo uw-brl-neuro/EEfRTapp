@@ -42,7 +42,7 @@ class StartPage(tk.Frame):
                                       command = lambda: self.font_size_up(master))
         btn_font_size_up.grid(row = 6, column = 0)
         lbl_font = tk.Label(subFrame,
-                       text="Font Size Setting", font=tkFont.Font(size= (master.get_font_size() - 10)))
+                       text= f"{self.font_size_display(master)}", font=tkFont.Font(size= (master.get_font_size() - 10)))
         lbl_font.grid(row=7, column=0)
         btn_font_size_down = ttk.Button(subFrame, text="-",
                                         command = lambda: self.font_size_down(master))
@@ -55,6 +55,12 @@ class StartPage(tk.Frame):
     def font_size_down(self, master):
         master.set_font_size(master.get_font_size() - 1)
         master.switch_frame(StartPage)
+
+    def font_size_display(self, master):
+        if master.get_font_size() == master.get_original_font_size():
+            return f"Font Size Setting: {master.get_font_size()} (Default)"
+        else:
+            return f"Font Size Setting: {master.get_font_size()}"
 
 
     # When confirm button is hit, store the name entered by the participant

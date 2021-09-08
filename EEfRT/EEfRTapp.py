@@ -1,3 +1,4 @@
+import copy
 import tkinter as tk
 import time
 import StartEndPage
@@ -40,6 +41,7 @@ hard_time_limit = config["hard_time_limit"]
 easy_press_level = config["easy_press_level"]
 hard_press_level = config["hard_press_level"]
 font_size = config["font_size"]
+original_font_size = copy.deepcopy(font_size)
 
 
 # Create an EEfRT application
@@ -116,6 +118,9 @@ class EEfRTapp(tk.Tk):
 
     def get_font_size(self):
         return font_size
+
+    def get_original_font_size(self):
+        return original_font_size
 
     def set_font_size(self, size):
         global font_size
