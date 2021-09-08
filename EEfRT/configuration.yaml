@@ -2,10 +2,12 @@
  width_spec: 1200
  height_spec: 800
  maximum_practice: 1
- maximum_time: 10
+ maximum_time: 30
  easy_time_limit: 7
  hard_time_limit: 21
+ easy_press_level: 30
+ hard_press_level: 100
  probability: [12, 50, 88]
  reward_lowerbound: 1.24
- reward_higherbound: 4.3
+ reward_upperbound: 4.3
  font_size: 25

@@ -61,7 +61,7 @@ class StartPage(tk.Frame):
     def confirm_name(self, master, entry):
         global participant_name
         participant_name = entry.get()
-        master.switch_frame(PracticeIntro.PracticeIntro)
+        master.switch_frame(PracticeIntro.ExperimentIntro)
 
 
 # Create the ending page of this EEfRT app. The very last page of this app. Provides option to

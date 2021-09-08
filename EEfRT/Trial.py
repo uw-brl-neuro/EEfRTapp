@@ -10,7 +10,7 @@ import TimedIntro
 # Generate a reward based on the range given by the configuration
 def reward_generator(master):
     global current_reward
-    current_reward = random.uniform(master.get_reward_lowerbound(), master.get_reward_higherbound()).__round__(2)
+    current_reward = random.uniform(master.get_reward_lowerbound(), master.get_reward_upperbound()).__round__(2)
     return current_reward
 
 # Generate the probability of winning the current trial based on the configuration
@@ -114,7 +114,7 @@ class TrialChoose(tk.Frame):
         task_level = 0
         master.set_frame_switch_status(True)
         master.record_data(task_level)
-        self.after(0, lambda: master.switch_frame(Task))
+        self.after(0, lambda: master.switch_frame(ReadyPage))
 
     # Switch to hard task
     def swtich_to_HardTask(self, master):
@@ -122,7 +122,21 @@ class TrialChoose(tk.Frame):
         task_level = 1
         master.set_frame_switch_status(True)
         master.record_data(task_level)
-        self.after(0, lambda: master.switch_frame(Task))
+        self.after(0, lambda: master.switch_frame(ReadyPage))
+
+class ReadyPage(tk.Frame):
+    def __init__(self, master):
+        tk.Frame.__init__(self, master)
+
+        subFrame = tk.Frame(master=self)
+        subFrame.pack()
+
+        lbl = tk.Label(subFrame,
+                             text = "Ready?", font= tkFont.Font(size=master.get_font_size()) )
+        lbl.grid(row = 0, column = 1)
+
+        self.after(500, lambda: master.switch_frame(Task))
+
 
 # Create the page for the task with a progress bar
 class Task(tk.Frame):
@@ -135,10 +149,10 @@ class Task(tk.Frame):
         # Decide the reward and progress bar level based on the difficulty of the trial
         if task_level == 0:
             current_reward = 1
-            maximum_level = 30
+            maximum_level = master.get_easy_press_level()
             time_limit = master.get_easy_time_limit() * 1000 - 500
         else:
-            maximum_level = 100
+            maximum_level = master.get_hard_press_level()
             time_limit = master.get_hard_time_limit() * 1000 - 500
 
         # Record the reward level of this trial

@@ -34,9 +34,11 @@ maximum_pratice = config["maximum_practice"]
 maximum_time = config["maximum_time"]
 probability = config["probability"]
 reward_lowerbound = config["reward_lowerbound"]
-reward_higherbound = config["reward_higherbound"]
+reward_upperbound = config["reward_upperbound"]
 easy_time_limit = config["easy_time_limit"]
 hard_time_limit = config["hard_time_limit"]
+easy_press_level = config["easy_press_level"]
+hard_press_level = config["hard_press_level"]
 font_size = config["font_size"]
 
 
@@ -97,14 +99,20 @@ class EEfRTapp(tk.Tk):
     def get_reward_lowerbound(self):
         return reward_lowerbound
 
-    def get_reward_higherbound(self):
-        return reward_higherbound
+    def get_reward_upperbound(self):
+        return reward_upperbound
 
     def get_easy_time_limit(self):
         return easy_time_limit
 
     def get_hard_time_limit(self):
         return hard_time_limit
+
+    def get_easy_press_level(self):
+        return easy_press_level
+
+    def get_hard_press_level(self):
+        return hard_press_level
 
     def get_font_size(self):
         return font_size
