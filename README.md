@@ -2,10 +2,9 @@
 
 User Guide
 ---
-Follow the procedures to start the program:
+Download the code from the "code" button on the top right and follow the procedures below to start the program:
 
-1. Download the code from the "code" button on the top right 
-2. Open the folder that you just downloaded
+1. Open the folder that you just downloaded
 3. Open the EEfRT folder   
 4. Copy the complete *file path* of the EEfRTapp.py file
 5. Open the command prompt (windows) or terminal (mac)
