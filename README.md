@@ -1,9 +1,7 @@
 # EEfRTapp
 
 ## User Guide
-
 ---
-
 Follow the procedures to start the program:
 
 1. Download the code from the "code" button on the top right 
@@ -32,7 +30,6 @@ other essential files for the program to run. Each time you open the program and
 the new data will be appended to the previously stored data. 
 
 ##Developer Guide
-
 ---
 Comments are added to each class, function, and global variables. If you have any specific
 question, please contact: davin05@uw.edu. 
