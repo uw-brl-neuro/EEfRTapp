@@ -15,10 +15,10 @@ class StartPage(tk.Frame):
         subFrame.pack()
 
         lbl = tk.Label(subFrame,
-                       text = "Welcome To EEfRT Experiment!", font = tkFont.Font(size=25))
+                       text = "Welcome To EEfRT Experiment!", font = tkFont.Font(size= master.get_font_size()))
         lbl.grid(row = 0, column = 0)
         lbl2 = tk.Label(subFrame,
-                        text = "thank you for participating", font  = tkFont.Font(size = 20))
+                        text = "thank you for participating", font  = tkFont.Font(size = (master.get_font_size() - 5)))
         lbl2.grid(row = 1, column = 0)
 
         name_entry = tk.Entry(subFrame)
@@ -47,10 +47,10 @@ class EndPage(tk.Frame):
         subFrame.pack()
 
         lbl = tk.Label(subFrame,
-                       text="Congratulation, you have completed all of the trails!", font=tkFont.Font(size=25))
+                       text="Congratulation, you have completed all of the trails!", font=tkFont.Font(size= master.get_font_size()))
         lbl.grid(row=0, column=0)
         lbl2 = tk.Label(subFrame,
-                        text="thank you for participating", font=tkFont.Font(size=20))
+                        text="thank you for participating", font=tkFont.Font(size= (master.get_font_size() - 5)))
         lbl2.grid(row=1, column=0)
 
         # Button to the start page

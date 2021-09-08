@@ -77,10 +77,10 @@ class TrialChoose(tk.Frame):
 
         lbl = tk.Label(subFrame,
                        text="Choose Your Task",
-                       font=tkFont.Font(size=25))
+                       font=tkFont.Font(size= master.get_font_size()))
         lbl.grid(row=0, column=1)
         lbl2 = tk.Label(subFrame,
-                        text=f"probability of win: {probability_generator(master)}%", font=tkFont.Font(size=15))
+                        text=f"probability of win: {probability_generator(master)}%", font=tkFont.Font(size=(master.get_font_size() - 10)))
 
         lbl2.grid(row=1, column=1)
 
@@ -195,7 +195,7 @@ class CompleteStatusPage(tk.Frame):
         master.record_data(complete_status)
 
         lbl = tk.Label(subFrame,
-                       text = f"You {self.status_to_string()} the task!", font = tkFont.Font(size=25))
+                       text = f"You {self.status_to_string()} the task!", font = tkFont.Font(size= master.get_font_size()))
         lbl.grid(row = 0, column = 0)
 
         if complete_status is True:
@@ -237,7 +237,7 @@ class WinningStatusPage(tk.Frame):
         status_in_string = tk.StringVar()
 
         lbl = tk.Label(subFrame,
-                       text= f"{self.status_to_string()}", font=tkFont.Font(size=25))
+                       text= f"{self.status_to_string()}", font=tkFont.Font(size=master.get_font_size()))
         lbl.grid(row=0, column=0)
 
         # Decide the next page to display based on the phase (practice session/timed trial session/ending)

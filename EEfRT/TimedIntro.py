@@ -18,7 +18,7 @@ class TimedTrialIntro(tk.Frame):
 
         lbl = tk.Label(subFrame,
                        text = "Practice session has ended. Timed trials will now begin",
-                       font= tkFont.Font(size=25))
+                       font= tkFont.Font(size= master.get_font_size()))
         lbl.grid(row = 0, column = 1)
 
 

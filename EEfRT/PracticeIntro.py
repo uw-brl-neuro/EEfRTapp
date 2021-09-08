@@ -26,10 +26,10 @@ class PracticeIntro(tk.Frame):
 
         lbl = tk.Label(subFrame,
                        text = f"Before we officially begin, you would play {master.get_maximum_practice()} practice trials",
-                       font= tkFont.Font(size=25))
+                       font= tkFont.Font(size=master.get_font_size()))
         lbl.grid(row = 0, column = 1)
         lbl2 = tk.Label(subFrame,
-                        text = "[Detailed Explanation To Be Inserted]", font = tkFont.Font(size=15))
+                        text = "[Detailed Explanation To Be Inserted]", font = tkFont.Font(size= (master.get_font_size() - 10)))
 
         lbl2.grid(row = 1, column = 1)
 
@@ -59,7 +59,7 @@ class PracticeTrial(tk.Frame):
 
         lbl = tk.Label(subFrame,
                        text = f"Pratice Trial {number_of_practice}",
-                       font= tkFont.Font(size=25))
+                       font= tkFont.Font(size= master.get_font_size()))
         lbl.grid(row = 0, column = 1)
 
         # Button to the introductory page of the practice trial session

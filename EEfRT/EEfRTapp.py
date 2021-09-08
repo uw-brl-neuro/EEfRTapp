@@ -37,6 +37,7 @@ reward_lowerbound = config["reward_lowerbound"]
 reward_higherbound = config["reward_higherbound"]
 easy_time_limit = config["easy_time_limit"]
 hard_time_limit = config["hard_time_limit"]
+font_size = config["font_size"]
 
 
 # Create an EEfRT application
@@ -104,6 +105,9 @@ class EEfRTapp(tk.Tk):
 
     def get_hard_time_limit(self):
         return hard_time_limit
+
+    def get_font_size(self):
+        return font_size
 
     # Create a set of new data for a trial
     # It checks if data needs to be collected in current state
