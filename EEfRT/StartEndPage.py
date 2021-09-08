@@ -30,6 +30,33 @@ class StartPage(tk.Frame):
                                   command = lambda : self.confirm_name(master, name_entry))
         btn_to_page1.grid(row = 3, column = 0)
 
+        lbl_empty = tk.Label(subFrame,
+                             text = "")
+        lbl_empty.grid(row = 4, column = 0)
+
+        lbl_empty2 = tk.Label(subFrame,
+                             text="")
+        lbl_empty2.grid(row=5, column=0)
+
+        btn_font_size_up = ttk.Button(subFrame, text = "+",
+                                      command = lambda: self.font_size_up(master))
+        btn_font_size_up.grid(row = 6, column = 0)
+        lbl_font = tk.Label(subFrame,
+                       text="Font Size Setting", font=tkFont.Font(size= (master.get_font_size() - 10)))
+        lbl_font.grid(row=7, column=0)
+        btn_font_size_down = ttk.Button(subFrame, text="-",
+                                        command = lambda: self.font_size_down(master))
+        btn_font_size_down.grid(row = 8, column = 0)
+
+    def font_size_up(self, master):
+        master.set_font_size(master.get_font_size() + 1)
+        master.switch_frame(StartPage)
+
+    def font_size_down(self, master):
+        master.set_font_size(master.get_font_size() - 1)
+        master.switch_frame(StartPage)
+
+
     # When confirm button is hit, store the name entered by the participant
     def confirm_name(self, master, entry):
         global participant_name

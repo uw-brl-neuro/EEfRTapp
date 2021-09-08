@@ -109,6 +109,10 @@ class EEfRTapp(tk.Tk):
     def get_font_size(self):
         return font_size
 
+    def set_font_size(self, size):
+        global font_size
+        font_size = size
+
     # Create a set of new data for a trial
     # It checks if data needs to be collected in current state
     def new_data(self):
