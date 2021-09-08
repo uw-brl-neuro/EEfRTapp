@@ -4,10 +4,10 @@
     <list default="true" id="25b4cb23-0e62-498d-bb61-1c4ce8861963" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/PracticeIntro.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/PracticeIntro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/StartEndPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/StartEndPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/Trial.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/Trial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/configuration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/configuration.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/trailResult.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/trialResult.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +78,7 @@
       <workItem from="1630803306298" duration="6901000" />
       <workItem from="1630941331062" duration="2980000" />
       <workItem from="1630961088510" duration="4336000" />
-      <workItem from="1631118348754" duration="9697000" />
+      <workItem from="1631118348754" duration="12399000" />
     </task>
     <servers />
   </component>

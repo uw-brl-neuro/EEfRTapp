@@ -16,7 +16,7 @@ with open(f'{yaml_file_path}', 'r') as d:
     config = yaml.safe_load(d)
 
 # Read and store the data if there exists a previous data file
-csv_file_path = os.path.join(os.path.dirname(__file__), "trailResult.csv")
+csv_file_path = os.path.join(os.path.dirname(__file__), "trialResult.csv")
 if os.path.isfile(csv_file_path) is True:
     with open(f'{csv_file_path}', 'r', newline = '') as oldf:
         reader = csv.reader(oldf)

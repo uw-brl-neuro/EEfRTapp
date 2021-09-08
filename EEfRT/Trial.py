@@ -124,6 +124,7 @@ class TrialChoose(tk.Frame):
         master.record_data(task_level)
         self.after(0, lambda: master.switch_frame(ReadyPage))
 
+# Creat a ready page (preparing for the progress bar to show up)
 class ReadyPage(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
