@@ -1,6 +1,6 @@
 # EEfRTapp
 
-## User Guide
+User Guide
 ---
 Follow the procedures to start the program:
 
@@ -29,7 +29,7 @@ trailResult.csv file in the same EEfRT folder with EEfRTapp.py file, configurati
 other essential files for the program to run. Each time you open the program and collect new data, 
 the new data will be appended to the previously stored data. 
 
-##Developer Guide
+Developer Guide
 ---
 Comments are added to each class, function, and global variables. If you have any specific
 question, please contact: davin05@uw.edu. 
