@@ -11,7 +11,7 @@ Download the code from the "code" button on the top right and follow the procedu
 6. Type the command: ``python`` and paste the file path that you copied 
 7. You command now should look like ``python EEfRT-file-path``, hit the enter/return key
 
-Now you should see the window of the app pops up. If you receive an errors, it is most likely due 
+Now you should see the window of the app pops up. If you receive an error, it is most likely due 
 to the python package that you downloaded doesn't come with yaml. To fix this, enter this command: ``pip install pyyaml ``.
 
 The default setting of this app follows [this paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2720457/pdf/pone.0006598.pdf) by Treadway. 
