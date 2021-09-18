@@ -53,6 +53,11 @@ class EEfRTapp(tk.Tk):
         global number_of_practice
         number_of_practice = 0
 
+        def open_test(event):
+            self.destroy()
+
+        self.bind("<Control_L>t", open_test)
+
     # Allows the EEfRT app to switch from one frame to another
     def switch_frame(self, frame_to_display):
         global frame_has_switched
