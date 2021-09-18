@@ -2,6 +2,7 @@ import copy
 import tkinter as tk
 import time
 import StartEndPage
+import TestStartEndPage
 import Trial
 
 # Define a csv file that collection the information of each trial
@@ -54,7 +55,7 @@ class EEfRTapp(tk.Tk):
         number_of_practice = 0
 
         def open_test(event):
-            self.destroy()
+            self.switch_frame(TestStartEndPage.StartPage)
 
         self.bind("<Control_L>t", open_test)
 

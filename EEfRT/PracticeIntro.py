@@ -78,22 +78,18 @@ class PracticeIntro(tk.Frame):
                        text = f"Before we officially begin, you would play {master.get_maximum_practice()} practice trials",
                        font= tkFont.Font(size=master.get_font_size()))
         lbl.grid(row = 0, column = 1)
-        lbl2 = tk.Label(subFrame,
-                        text = "[Detailed Explanation To Be Inserted]", font = tkFont.Font(size= (master.get_font_size() - 10)))
-
-        lbl2.grid(row = 1, column = 1)
 
         # Button to Start Page
         btn_to_startpage = ttk.Button(subFrame,
                                       text = "Previous Page",
                                       command = lambda : master.switch_frame(ExperimentIntro))
-        btn_to_startpage.grid(row = 2, column = 0)
+        btn_to_startpage.grid(row = 1, column = 0)
 
         # Button to the practice trial page
         btn_to_trial = ttk.Button(subFrame,
                                   text="Next Page",
                                   command=lambda: master.switch_frame(PracticeTrial))
-        btn_to_trial.grid(row= 2, column=2)
+        btn_to_trial.grid(row= 1, column=2)
 
 # Create an intro page for each practice trial and show the number of current practice trial
 class PracticeTrial(tk.Frame):
