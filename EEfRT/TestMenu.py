@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import font as tkFont
 import Trial
 import TestAutotest
+import TestTrial
 
 # keep track of how many practice trials have passed
 global number_of_entry
@@ -47,6 +48,7 @@ class TestMenu(tk.Frame):
     def autotest(self, master, entry):
         global number_of_entry
         number_of_entry = int(entry.get())
+        TestTrial.trial_number = 0
         self.after(0, lambda: master.switch_frame(TestAutotest.Autotest))
 
 
