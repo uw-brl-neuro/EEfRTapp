@@ -62,6 +62,4 @@ class Autotest(tk.Frame):
             self.after(0, lambda: master.switch_frame(StartEndPage.EndPage))
         else:
             self.after(0, lambda: master.switch_frame(TestTrial.TrialCue))
-            progress.step(1)
-
 
