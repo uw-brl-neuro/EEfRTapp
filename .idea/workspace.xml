@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25b4cb23-0e62-498d-bb61-1c4ce8861963" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/EEfRT/TestMenu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EEfRT/TestStartEndPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EEfRT/TestAutotest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/PracticeIntro.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/PracticeIntro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/TestMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/TestMenu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,8 @@
       <workItem from="1630961088510" duration="4336000" />
       <workItem from="1631118348754" duration="14990000" />
       <workItem from="1631919187906" duration="4804000" />
-      <workItem from="1631931534178" duration="4005000" />
+      <workItem from="1631931534178" duration="10440000" />
+      <workItem from="1631980204376" duration="555000" />
     </task>
     <servers />
   </component>
