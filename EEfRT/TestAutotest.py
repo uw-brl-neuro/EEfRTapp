@@ -7,6 +7,25 @@ import datetime
 import random
 import StartEndPage
 import TestTrial
+import TestStartEndPage
+
+class ProgressPopUp(tk.Tk):
+    def __init__(self):
+        tk.Tk.__init__(self)
+
+        lbl = tk.Label(text="TEST MODE", font=tkFont.Font(size=(20)),
+                       fg="red")
+        lbl.grid(row=0, column=0)
+
+        global indicator
+        indicator = tk.IntVar(value=TestTrial.trial_number + 1)
+
+        global progress
+        progress = ttk.Progressbar(orient=tk.HORIZONTAL, length=500, maximum = TestMenu.number_of_entry + 1,
+                                   mode='determinate',
+                                   variable = indicator)
+        progress.grid(row=1, column=0)
+
 
 
 class Autotest(tk.Frame):
@@ -57,9 +76,40 @@ class Autotest(tk.Frame):
         #     master.data_merge()
         #     progress.step(1)
 
+        progressbar = ProgressPopUp()
+        progressbar.title("progress bar")
+        progressbar.destroy()
+
+        # self.progressbar_pop_up()
 
         if TestTrial.trial_number == TestMenu.number_of_entry:
-            self.after(0, lambda: master.switch_frame(StartEndPage.EndPage))
+            self.after(0, lambda: master.switch_frame(TestStartEndPage.EndPage))
         else:
             self.after(0, lambda: master.switch_frame(TestTrial.TrialCue))
+
+    # def progressbar_pop_up(self):
+    #     popup = tk.Tk()
+    #     popup.title("pogress bar")
+    #
+    #     lbl = tk.Label(popup, text="TEST MODE", font=tkFont.Font(size=(20)),
+    #                    fg="red")
+    #     lbl.grid(row=0, column=0)
+    #
+    #     global indicator
+    #     indicator = tk.IntVar(value=TestTrial.trial_number + 1)
+    #
+    #     global progress
+    #     progress = ttk.Progressbar(popup, orient=tk.HORIZONTAL, length=500, maximum=TestMenu.number_of_entry + 1,
+    #                                mode='determinate',
+    #                                variable=indicator)
+    #     progress.grid(row=1, column=0)
+    #     self.after(0, lambda: popup.destroy())
+
+
+
+
+
+
+
+
 
