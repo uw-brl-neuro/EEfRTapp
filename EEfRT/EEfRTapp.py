@@ -2,6 +2,7 @@ import copy
 import tkinter as tk
 import time
 import StartEndPage
+import TestStartEndPage
 import Trial
 
 # Define a csv file that collection the information of each trial
@@ -52,6 +53,11 @@ class EEfRTapp(tk.Tk):
         self.switch_frame(StartEndPage.StartPage)
         global number_of_practice
         number_of_practice = 0
+
+        def open_test(event):
+            self.switch_frame(TestStartEndPage.StartPage)
+
+        self.bind("<Control_L>t", open_test)
 
     # Allows the EEfRT app to switch from one frame to another
     def switch_frame(self, frame_to_display):
