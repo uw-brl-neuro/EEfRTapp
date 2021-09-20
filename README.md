@@ -30,7 +30,15 @@ the new data will be appended to the previously stored data.
 
 Developer Guide
 ---
-Comments are added to each class, function, and global variables. If you have any specific
-question, please contact: davin05@uw.edu. 
+Comments are added to each class, function, and global variables. 
+
+To enter test mode, please click ``Control + T``. This will take you to the test mode, and 
+allow you to run a number of auto test trials of your choice. The result of the test trial 
+will also be stored in trialResult.csv. Make sure you do not mix the test result with the 
+real experimental result. Alos, note that for some unknown reason, the amount of time it takes 
+to complete the auto tests does not grow linearly with number of test. (e.g: It takes 2 seconds
+to finish 50 auto test trials, but 6 seconds to finish 100)
+
+If you have any specific question, please contact: davin05@uw.edu. 
 
 
