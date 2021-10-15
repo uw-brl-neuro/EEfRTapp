@@ -51,9 +51,6 @@ class TestMenu(tk.Frame):
         TestTrial.trial_number = 0
         self.after(0, lambda: master.switch_frame(TestAutotest.Autotest))
 
-    def newprogram
-
-
 
 
 
