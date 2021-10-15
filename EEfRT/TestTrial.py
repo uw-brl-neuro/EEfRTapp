@@ -7,11 +7,13 @@ import PracticeIntro
 import StartEndPage
 import TimedIntro
 import TestAutotest
+import TestStartEndPage
 
 # Generate a reward based on the range given by the configuration
 def reward_generator(master):
     global current_reward
     current_reward = random.uniform(master.get_reward_lowerbound(), master.get_reward_upperbound()).__round__(2)
+    TestStartEndPage.reward_data.append(current_reward)
     return current_reward
 
 # Generate the probability of winning the current trial based on the configuration
@@ -19,7 +21,9 @@ def probability_generator(master):
     global probability_to_win
     probability_to_win = random.choice(master.get_probability())
     master.record_data(probability_to_win)
+    TestStartEndPage.probability_data.append(probability_to_win)
     return probability_to_win
+
 
 # Store the level of current task, 0 is easy, 1 is hard
 global task_level
