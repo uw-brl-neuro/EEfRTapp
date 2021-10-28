@@ -15,7 +15,7 @@ import datetime
 
 # Define a csv file that collection the information of each trial
 import csv
-header = ['Name', 'TrialNumber', 'T-TrialStart', 'Probability', 'TaskLevel', 'T-DecisionMade', 'Reward', 'T-CompleteStatus', 'T-TaskComplete', 'WinningStatus']
+header = ['Name', 'TrialNumber', 'T-TrialStart', 'Probability', 'TaskLevel', 'T-DecisionMade', 'Reward', 'CompleteStatus', 'T-TaskComplete', 'WinningStatus']
 data_collection = []
 
 # Read a yaml file to configure the application accordingly
@@ -188,7 +188,7 @@ class EEfRTapp(tk.Tk):
             sound_data = []
             sound_data.append(StartEndPage.participant_name)
             frequency = random.uniform(100, 500)
-            duration = 1000
+            duration = 100
             if platform.system() == 'Darwin':
                 import os
                 ts = time.time()
@@ -202,8 +202,8 @@ class EEfRTapp(tk.Tk):
                 winsound.Beep(int(frequency), duration)
                 sound_data.append(frequency)
             sound_data_collection.append(sound_data)
-        interval_to_next = random.uniform(5000, 10000)
-        self.after(int(interval_to_next), lambda: self.sound_generating())
+            interval_to_next = random.uniform(5000, 10000)
+            self.after(int(interval_to_next), lambda: self.sound_generating())
 
 # Initiate and run the app
 app = EEfRTapp()

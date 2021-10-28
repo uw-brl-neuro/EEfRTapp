@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import font as tkFont
 import PracticeIntro
+import Trial
 
 # The name of the participant
 global participant_name
@@ -75,6 +76,8 @@ class StartPage(tk.Frame):
 class EndPage(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
+
+        Trial.start_collect = False
 
         subFrame = tk.Frame(master=self)
         subFrame.pack()
