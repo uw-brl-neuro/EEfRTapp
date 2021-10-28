@@ -1,13 +1,21 @@
 import copy
 import tkinter as tk
-import time
 import StartEndPage
 import TestStartEndPage
 import Trial
+import random
+
+
+# for sound generating
+import platform
+
+# for time stamp recording
+import time
+import datetime
 
 # Define a csv file that collection the information of each trial
 import csv
-header = ['Name', 'TrialNumber', 'TimeStamp', 'Probability', 'TaskLevel', 'Reward', 'CompleteStatus', 'WinningStatus']
+header = ['Name', 'TrialNumber', 'T-TrialStart', 'Probability', 'TaskLevel', 'T-DecisionMade', 'Reward', 'T-CompleteStatus', 'T-TaskComplete', 'WinningStatus']
 data_collection = []
 
 # Read a yaml file to configure the application accordingly
@@ -25,6 +33,17 @@ if os.path.isfile(csv_file_path) is True:
         old_header = next(reader)
         for row in reader:
             data_collection.append(row)
+
+# Sound data
+sound_header = ['Name', 'T-Sound', 'frequency']
+sound_data_collection = []
+sound_csv_file_path = os.path.join(os.path.dirname(__file__), "soundData.csv")
+if os.path.isfile(sound_csv_file_path) is True:
+    with open(f'{sound_csv_file_path}', 'r', newline = '') as oldf_s:
+        reader = csv.reader(oldf_s)
+        old_header = next(reader)
+        for row in reader:
+            sound_data_collection.append(row)
 
 # Define the width and height size of the window of the application
 width_spec = config["width_spec"]
@@ -153,10 +172,38 @@ class EEfRTapp(tk.Tk):
             else:
                 data.append(f'{input}')
 
+    # record time stamp when called
+    def record_time(self):
+        ts = time.time()
+        self.record_data(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+
     # Merge the data collected in this trial with the records of previous trials
     def data_merge(self):
         if Trial.start_collect is True:
             data_collection.append(data)
+
+    # sound generating
+    def sound_generating(self):
+        if Trial.start_collect is True:
+            sound_data = []
+            sound_data.append(StartEndPage.participant_name)
+            frequency = random.uniform(100, 500)
+            duration = 1000
+            if platform.system() == 'Darwin':
+                import os
+                ts = time.time()
+                sound_data.append(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+                os.system('play -n synth %s sin %s' % (duration / 1000, frequency))
+                sound_data.append(frequency)
+            elif platform.system() == 'Windows':
+                import winsound
+                ts = time.time()
+                sound_data.append(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+                winsound.Beep(int(frequency), duration)
+                sound_data.append(frequency)
+            sound_data_collection.append(sound_data)
+        interval_to_next = random.uniform(5000, 10000)
+        self.after(int(interval_to_next), lambda: self.sound_generating())
 
 # Initiate and run the app
 app = EEfRTapp()
@@ -169,5 +216,16 @@ with open(f'{csv_file_path}', 'w', newline ='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     writer.writerows(data_collection)
+
+# Create a csv file based on the sound data collected throughout the experiment
+with open(f'{sound_csv_file_path}', 'w', newline='') as s_f:
+    writer = csv.writer(s_f)
+    writer.writerow(sound_header)
+    writer.writerows(sound_data_collection)
+
+
+
+
+
 
 

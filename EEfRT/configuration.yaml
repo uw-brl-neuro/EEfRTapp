@@ -1,8 +1,8 @@
 ---
  width_spec: 1200
  height_spec: 800
- maximum_practice: 4
- maximum_time: 1200
+ maximum_practice: 1
+ maximum_time: 20
  easy_time_limit: 7
  hard_time_limit: 21
  easy_press_level: 30

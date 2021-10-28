@@ -12,6 +12,7 @@ class TimedTrialIntro(tk.Frame):
 
         Trial.start_time = master.get_current_time()
         Trial.start_collect = True
+        master.sound_generating()
 
         subFrame = tk.Frame(master=self)
         subFrame.pack()

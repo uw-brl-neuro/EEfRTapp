@@ -54,10 +54,10 @@ class TrialCue(tk.Frame):
         master.record_data(trial_number)
 
         # Record the current time as time stamp
-        import time
-        ts = time.time()
-        import datetime
-        master.record_data(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+        # import time
+        # ts = time.time()
+        # import datetime
+        # master.record_data(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
 
         lbl = tk.Label(subFrame,
                        text= " + ",
@@ -71,6 +71,8 @@ class TrialCue(tk.Frame):
 class TrialChoose(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
+
+        master.record_time()
 
         subFrame = tk.Frame(master=self)
         subFrame.pack()
@@ -104,8 +106,9 @@ class TrialChoose(tk.Frame):
     def switch_to_Task(self, master):
         if master.get_frame_swtich_status() is False:
             global task_level
-            task_level = random.randint(0, 1)
+            task_level = random.randint(0, 1) + 2
             master.record_data(task_level)
+            master.record_time()
             self.after(0, lambda: master.switch_frame(Task))
 
     # Switch to easy task
@@ -114,6 +117,7 @@ class TrialChoose(tk.Frame):
         task_level = 0
         master.set_frame_switch_status(True)
         master.record_data(task_level)
+        master.record_time()
         self.after(0, lambda: master.switch_frame(ReadyPage))
 
     # Switch to hard task
@@ -122,6 +126,7 @@ class TrialChoose(tk.Frame):
         task_level = 1
         master.set_frame_switch_status(True)
         master.record_data(task_level)
+        master.record_time()
         self.after(0, lambda: master.switch_frame(ReadyPage))
 
 # Creat a ready page (preparing for the progress bar to show up)
@@ -208,6 +213,7 @@ class CompleteStatusPage(tk.Frame):
 
         # Record the completeness status of current trial
         master.record_data(complete_status)
+        master.record_time()
 
         lbl = tk.Label(subFrame,
                        text = f"You {self.status_to_string()} the task!", font = tkFont.Font(size= master.get_font_size()))
