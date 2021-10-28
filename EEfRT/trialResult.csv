@@ -1,1 +1,5 @@
-Name,TrialNumber,T-TrialStart,Probability,TaskLevel,T-DecisionMade,Reward,T-CompleteStatus,T-TaskComplete,WinningStatus
+Name,TrialNumber,T-TrialStart,Probability,TaskLevel,T-DecisionMade,Reward,CompleteStatus,T-TaskComplete,WinningStatus
+Davin,1,2021-10-28 15:30:18,12,0,2021-10-28 15:30:19,1,1,2021-10-28 15:30:25,0
+Davin,2,2021-10-28 15:30:28,12,0,2021-10-28 15:30:29,1,1,2021-10-28 15:30:33,0
+Davin2,1,2021-10-28 15:30:55,12,0,2021-10-28 15:30:57,1,1,2021-10-28 15:31:01,0
+Davin2,2,2021-10-28 15:31:05,12,1,2021-10-28 15:31:06,3.4,1,2021-10-28 15:31:20,0

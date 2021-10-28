@@ -188,7 +188,7 @@ class EEfRTapp(tk.Tk):
             sound_data = []
             sound_data.append(StartEndPage.participant_name)
             frequency = random.uniform(100, 500)
-            duration = 100
+            duration = 1
             if platform.system() == 'Darwin':
                 import os
                 ts = time.time()

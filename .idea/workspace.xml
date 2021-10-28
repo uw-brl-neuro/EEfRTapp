@@ -4,8 +4,6 @@
     <list default="true" id="25b4cb23-0e62-498d-bb61-1c4ce8861963" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/StartEndPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/StartEndPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/configuration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/configuration.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/soundData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/soundData.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/trialResult.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/trialResult.csv" afterDir="false" />
     </list>
@@ -95,7 +93,7 @@
       <workItem from="1634334966402" duration="828000" />
       <workItem from="1634850032484" duration="418000" />
       <workItem from="1634956981412" duration="413000" />
-      <workItem from="1635374835188" duration="8175000" />
+      <workItem from="1635374835188" duration="9959000" />
     </task>
     <servers />
   </component>
