@@ -202,7 +202,10 @@ class EEfRTapp(tk.Tk):
                 winsound.Beep(int(frequency), duration)
                 sound_data.append(frequency)
             sound_data_collection.append(sound_data)
-            interval_to_next = random.uniform(5000, 10000)
+            if random.randint(0, 100) <= 40:
+                interval_to_next = random.uniform(1000, 3000)
+            else:
+                interval_to_next = random.uniform(5000, 10000)
             self.after(int(interval_to_next), lambda: self.sound_generating())
 
 # Initiate and run the app
