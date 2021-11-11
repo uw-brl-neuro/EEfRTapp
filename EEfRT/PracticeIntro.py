@@ -21,7 +21,8 @@ class ExperimentIntro(tk.Frame):
         text_box = tk.Text(subFrame,
                            font= tkFont.Font(size= master.get_font_size()),
                            width = (65 + (2 * (25 - master.get_font_size()))),
-                           height = (20 + (0.5 * (25 - master.get_font_size()))))
+                           height = (20 + (0.5 * (25 - master.get_font_size()))),
+                           wrap = "word")
         text_box.grid(row = 1, column = 1)
 
         scroll = tk.Scrollbar(subFrame, orient = "vertical", command = text_box.yview)

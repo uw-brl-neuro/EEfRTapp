@@ -175,7 +175,7 @@ class EEfRTapp(tk.Tk):
     # record time stamp when called
     def record_time(self):
         ts = time.time()
-        self.record_data(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+        self.record_data(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
 
     # Merge the data collected in this trial with the records of previous trials
     def data_merge(self):
@@ -192,13 +192,13 @@ class EEfRTapp(tk.Tk):
             if platform.system() == 'Darwin':
                 import os
                 ts = time.time()
-                sound_data.append(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+                sound_data.append(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
                 os.system('play -n synth %s sin %s' % (duration / 1000, frequency))
                 sound_data.append(frequency)
             elif platform.system() == 'Windows':
                 import winsound
                 ts = time.time()
-                sound_data.append(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+                sound_data.append(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
                 winsound.Beep(int(frequency), duration)
                 sound_data.append(frequency)
             sound_data_collection.append(sound_data)

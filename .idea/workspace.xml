@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="25b4cb23-0e62-498d-bb61-1c4ce8861963" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/PracticeIntro.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/PracticeIntro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/configuration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/configuration.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/soundData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/soundData.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/trialResult.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/trialResult.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +98,7 @@
       <workItem from="1635374835188" duration="12047000" />
       <workItem from="1636089024070" duration="572000" />
       <workItem from="1636230540980" duration="353000" />
+      <workItem from="1636572875127" duration="969000" />
     </task>
     <servers />
   </component>
@@ -118,11 +124,6 @@
           <url>file://$PROJECT_DIR$/EEfRT/TestMenu.py</url>
           <line>33</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/EEfRT/StartEndPage.py</url>
-          <line>68</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
