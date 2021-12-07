@@ -5,8 +5,8 @@
  maximum_time: 1200
  easy_time_limit: 7
  hard_time_limit: 21
- easy_press_level: 30
- hard_press_level: 100
+ easy_press_level: 23
+ hard_press_level: 75
  probability: [12, 50, 88]
  reward_lowerbound: 1.24
  reward_upperbound: 4.3
