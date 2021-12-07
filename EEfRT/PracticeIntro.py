@@ -47,14 +47,30 @@ class ExperimentIntro(tk.Frame):
         text_box.config(state = "disabled")
 
         btn_to_startpage = ttk.Button(subFrame,
-                                      text="Previous Page",
+                                      text="Previous Page (Left Key)",
                                       command=lambda: master.switch_frame(StartEndPage.StartPage))
         btn_to_startpage.grid(row=2, column=1)
 
+        def switch_to_start_page(event):
+            master.switch_frame(StartEndPage.StartPage)
+            master.unbind("<Right>", to_practiceIntro_right)
+            master.unbind("<Left>", to_start_page_left)
+
+        global to_start_page_left
+        to_start_page_left = master.bind("<Left>", switch_to_start_page)
+
         btn_to_practiceIntro = ttk.Button(subFrame,
-                                      text="I understand, Next Page",
+                                      text="I understand, Next Page (Right Key)",
                                       command=lambda: master.switch_frame(PracticeIntro))
         btn_to_practiceIntro.grid(row=3, column=1)
+
+        def switch_to_practiceIntro(event):
+            master.switch_frame(PracticeIntro)
+            master.unbind("<Right>", to_practiceIntro_right)
+            master.unbind("<Left>", to_start_page_left)
+
+        global to_practiceIntro_right
+        to_practiceIntro_right = master.bind("<Right>", switch_to_practiceIntro)
 
 
 
@@ -82,15 +98,33 @@ class PracticeIntro(tk.Frame):
 
         # Button to Start Page
         btn_to_startpage = ttk.Button(subFrame,
-                                      text = "Previous Page",
+                                      text = "Previous Page (Up Key)",
                                       command = lambda : master.switch_frame(ExperimentIntro))
         btn_to_startpage.grid(row = 1, column = 0)
 
-        # Button to the practice trial page
+        def switch_to_startpage(event):
+            master.switch_frame(ExperimentIntro)
+            master.unbind("<Up>", to_startpage_left)
+            master.unbind("<Down>", to_practiceTrial_right)
+
+        global to_startpage_left
+        to_startpage_left = master.bind("<Up>", switch_to_startpage)
+
+        # Button to the practice trial pages
         btn_to_trial = ttk.Button(subFrame,
-                                  text="Next Page",
+                                  text="Next Page (Down Key)",
                                   command=lambda: master.switch_frame(PracticeTrial))
         btn_to_trial.grid(row= 1, column=2)
+
+        def switch_to_practiceTrial(event):
+            master.switch_frame(PracticeTrial)
+            master.unbind("<Up>", to_startpage_left)
+            master.unbind("<Down>", to_practiceTrial_right)
+
+        global to_trial_right
+        to_practiceTrial_right = master.bind("<Down>", switch_to_practiceTrial)
+
+
 
 # Create an intro page for each practice trial and show the number of current practice trial
 class PracticeTrial(tk.Frame):
@@ -111,15 +145,29 @@ class PracticeTrial(tk.Frame):
 
         # Button to the introductory page of the practice trial session
         btn_to_PracticeIntro = ttk.Button(subFrame,
-                                          text="Restart Practice",
+                                          text="Restart Practice (Left Key)",
                                           command=lambda: master.switch_frame(PracticeIntro))
         btn_to_PracticeIntro.grid(row=2, column=0)
 
+        def switch_to_practiceIntro(event):
+            master.switch_frame(PracticeIntro)
+            master.unbind("<Right>", to_trial_right)
+            master.unbind("<Left>", to_practiceIntro_left)
+
+        global to_practiceIntro_left
+        to_practiceIntro_left = master.bind("<Left>", switch_to_practiceIntro)
+
         # Button to begin this practice trial
         btn_to_trial = ttk.Button(subFrame,
-                                  text="Confirm",
+                                  text="Confirm (Right Key)",
                                   command=lambda: master.switch_frame(Trial.TrialCue))
         btn_to_trial.grid(row=2, column=2)
 
+        def switch_to_trial(event):
+            master.switch_frame(Trial.TrialCue)
+            master.unbind("<Right>", to_trial_right)
+            master.unbind("<Left>", to_practiceIntro_left)
 
+        global to_trial_right
+        to_trial_right = master.bind("<Right>", switch_to_trial)
 

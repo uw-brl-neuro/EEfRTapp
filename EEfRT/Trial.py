@@ -82,21 +82,38 @@ class TrialChoose(tk.Frame):
                        font=tkFont.Font(size= master.get_font_size()))
         lbl.grid(row=0, column=1)
         lbl2 = tk.Label(subFrame,
-                        text=f"probability of win: {probability_generator(master)}%", font=tkFont.Font(size=(master.get_font_size() - 10)))
+                        text=f"probability of win: {probability_generator(master)}%",
+                        font=tkFont.Font(size=(master.get_font_size() - 10)))
 
         lbl2.grid(row=1, column=1)
 
         s = ttk.Style()
         s.configure('my.TButton', font=(15))
         btn_to_EasyTask = ttk.Button(subFrame,
-                                     text= "Easy Task \n $1.00 ", style = 'my.TButton',
+                                     text= "Easy Task (a key) \n $1.00", style = 'my.TButton',
                                      command=lambda: self.swtich_to_EasyTask(master))
         btn_to_EasyTask.grid(row=2, column=0)
 
+        def switch_to_EasyTask_a(event):
+            self.swtich_to_EasyTask(master)
+            master.unbind("a", to_EasyTask_a)
+            master.unbind("d", to_HardTask_d)
+
+        global to_EasyTask_a
+        to_EasyTask_a = master.bind("a", switch_to_EasyTask_a)
+
         btn_to_HardTask = ttk.Button(subFrame,
-                                     text=f"Hard Task \n ${reward_generator(master)} ", style='my.TButton',
+                                     text=f"Hard Task (d key) \n ${reward_generator(master)}", style='my.TButton',
                                      command=lambda: self.swtich_to_HardTask(master))
         btn_to_HardTask.grid(row=2, column=2)
+
+        def switch_to_HardTask_d(event):
+            self.swtich_to_HardTask(master)
+            master.unbind("a", to_EasyTask_a)
+            master.unbind("d", to_HardTask_d)
+
+        global to_HardTask_d
+        to_HardTask_d = master.bind("d", switch_to_HardTask_d)
 
         master.set_frame_switch_status(False)
         # Automatically choose a level for participant since no decision has been made within time limit
@@ -181,6 +198,7 @@ class Task(tk.Frame):
             if indicator.get() == maximum_level:
                 global complete_status
                 complete_status = True
+                master.record_data(indicator.get())
                 self.after(0, lambda: master.switch_frame(CompleteStatusPage))
                 master.unbind("<KeyRelease-space>", increase_progress)
             else:
@@ -198,6 +216,7 @@ class Task(tk.Frame):
     def switch_to_FailPage(self, master):
         if master.get_frame_swtich_status() is False:
             global complete_status
+            master.record_data(indicator.get())
             complete_status = False
             self.after(0, lambda: master.switch_frame(CompleteStatusPage))
             master.unbind("<KeyRelease-space>", increase_progress)

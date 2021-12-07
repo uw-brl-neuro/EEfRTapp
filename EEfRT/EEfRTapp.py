@@ -15,7 +15,7 @@ import datetime
 
 # Define a csv file that collection the information of each trial
 import csv
-header = ['Name', 'TrialNumber', 'T-TrialStart', 'Probability', 'TaskLevel', 'T-DecisionMade', 'Reward', 'CompleteStatus', 'T-TaskComplete', 'WinningStatus']
+header = ['Name', 'TrialNumber', 'T-TrialStart', 'Probability', 'TaskLevel', 'T-DecisionMade', 'Reward', 'CompleteLevel', 'CompleteStatus', 'T-TaskComplete', 'WinningStatus']
 data_collection = []
 
 # Read a yaml file to configure the application accordingly

@@ -24,14 +24,30 @@ class TimedTrialIntro(tk.Frame):
 
 
         btn_to_PracticeTrial = ttk.Button(subFrame,
-                                          text="One More Practice",
+                                          text="One More Practice (Up Key)",
                                           command=lambda: self.one_more_practice(master))
         btn_to_PracticeTrial.grid(row=2, column=0)
 
+        def switch_to_practicetrial(event):
+            self.one_more_practice(master)
+            master.unbind("<Up>", to_trial_up)
+            master.unbind("<Down>", to_practicetrial_down)
+
+        global to_practicetrial_down
+        to_practicetrial_down = master.bind("<Down>", switch_to_practicetrial)
+
         btn_to_trial = ttk.Button(subFrame,
-                                  text="Confirm",
+                                  text="Confirm (Down Key)",
                                   command=lambda: master.switch_frame(Trial.TrialCue))
         btn_to_trial.grid(row = 2, column=2)
+
+        def switch_to_trial(event):
+            master.switch_frame(Trial.TrialCue)
+            master.unbind("<Up>", to_trial_up)
+            master.unbind("<Down>", to_practicetrial_down)
+
+        global to_trial_up
+        to_trial_up = master.bind("<Up>", switch_to_trial)
 
     # Redo the last practice trial
     def one_more_practice(self, master):

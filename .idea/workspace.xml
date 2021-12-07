@@ -5,7 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/EEfRTapp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/PracticeIntro.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/PracticeIntro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/configuration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/configuration.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/StartEndPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/StartEndPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/TimedIntro.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/TimedIntro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EEfRT/Trial.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/Trial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/soundData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/soundData.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EEfRT/trialResult.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/trialResult.csv" afterDir="false" />
     </list>
@@ -98,7 +100,11 @@
       <workItem from="1635374835188" duration="12047000" />
       <workItem from="1636089024070" duration="572000" />
       <workItem from="1636230540980" duration="353000" />
-      <workItem from="1636572875127" duration="969000" />
+      <workItem from="1636572875127" duration="4314000" />
+      <workItem from="1637108775578" duration="502000" />
+      <workItem from="1637747245068" duration="221000" />
+      <workItem from="1638255086645" duration="10881000" />
+      <workItem from="1638852052160" duration="5123000" />
     </task>
     <servers />
   </component>

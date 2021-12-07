@@ -1,1 +1,1 @@
-Name,TrialNumber,T-TrialStart,Probability,TaskLevel,T-DecisionMade,Reward,CompleteStatus,T-TaskComplete,WinningStatus
+Name,TrialNumber,T-TrialStart,Probability,TaskLevel,T-DecisionMade,Reward,CompleteLevel,CompleteStatus,T-TaskComplete,WinningStatus
