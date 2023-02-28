@@ -37,13 +37,13 @@ with open(f'{yaml_file_path}', 'r') as d:
 # Sound data
 sound_header = ['Name', 'T-Sound', 'frequency']
 sound_data_collection = []
-sound_csv_file_path = os.path.join(os.path.dirname(__file__), "soundData.csv")
-if os.path.isfile(sound_csv_file_path) is True:
-    with open(f'{sound_csv_file_path}', 'r', newline = '') as oldf_s:
-        reader = csv.reader(oldf_s)
-        old_header = next(reader)
-        for row in reader:
-            sound_data_collection.append(row)
+# sound_csv_file_path = os.path.join(os.path.dirname(__file__), "soundData.csv")
+# if os.path.isfile(sound_csv_file_path) is True:
+#     with open(f'{sound_csv_file_path}', 'r', newline = '') as oldf_s:
+#         reader = csv.reader(oldf_s)
+#         old_header = next(reader)
+#         for row in reader:
+#             sound_data_collection.append(row)
 
 # Define the width and height size of the window of the application
 width_spec = config["width_spec"]
@@ -215,7 +215,7 @@ app.mainloop()
 
 prev_data = []
 # Read and store the data if there exists a previous data file
-csv_file_path = os.path.join(os.path.dirname(__file__), f"{StartEndPage.participant_name}.csv")
+csv_file_path = os.path.join(os.path.dirname(__file__), f"trialResult/{StartEndPage.participant_name}_trial.csv")
 if os.path.isfile(csv_file_path) is True:
     with open(f'{csv_file_path}', 'r', newline = '') as oldf:
         reader = csv.reader(oldf)
@@ -235,6 +235,20 @@ with open(f'{csv_file_path}', 'w', newline ='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     writer.writerows(data_collection)
+
+prev_sound = []
+sound_csv_file_path = os.path.join(os.path.dirname(__file__), f"soundResult/{StartEndPage.participant_name}_sound.csv")
+if os.path.isfile(sound_csv_file_path) is True:
+    with open(f'{sound_csv_file_path}', 'r', newline = '') as oldf_s:
+        reader = csv.reader(oldf_s)
+        old_header = next(reader)
+        for row in reader:
+            prev_sound.append(row)
+
+sound_data_collection = prev_sound + sound_data_collection
+
+for idx, data in enumerate(sound_data_collection):
+    data[1] = idx + 1
 
 # Create a csv file based on the sound data collected throughout the experiment
 with open(f'{sound_csv_file_path}', 'w', newline='') as s_f:
