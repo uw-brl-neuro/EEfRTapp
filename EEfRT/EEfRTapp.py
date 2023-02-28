@@ -25,14 +25,14 @@ yaml_file_path = os.path.join(os.path.dirname(__file__), "configuration.yaml")
 with open(f'{yaml_file_path}', 'r') as d:
     config = yaml.safe_load(d)
 
-# Read and store the data if there exists a previous data file
-csv_file_path = os.path.join(os.path.dirname(__file__), "trialResult.csv")
-if os.path.isfile(csv_file_path) is True:
-    with open(f'{csv_file_path}', 'r', newline = '') as oldf:
-        reader = csv.reader(oldf)
-        old_header = next(reader)
-        for row in reader:
-            data_collection.append(row)
+# # Read and store the data if there exists a previous data file
+# csv_file_path = os.path.join(os.path.dirname(__file__), "trialResult.csv")
+# if os.path.isfile(csv_file_path) is True:
+#     with open(f'{csv_file_path}', 'r', newline = '') as oldf:
+#         reader = csv.reader(oldf)
+#         old_header = next(reader)
+#         for row in reader:
+#             data_collection.append(row)
 
 # Sound data
 sound_header = ['Name', 'T-Sound', 'frequency']
@@ -62,7 +62,6 @@ easy_press_level = config["easy_press_level"]
 hard_press_level = config["hard_press_level"]
 font_size = config["font_size"]
 original_font_size = copy.deepcopy(font_size)
-
 
 # Create an EEfRT application
 class EEfRTapp(tk.Tk):
@@ -213,6 +212,23 @@ app = EEfRTapp()
 app.title("EEfRT experiment")
 app.geometry(size_spec)
 app.mainloop()
+
+prev_data = []
+# Read and store the data if there exists a previous data file
+csv_file_path = os.path.join(os.path.dirname(__file__), f"{StartEndPage.participant_name}.csv")
+if os.path.isfile(csv_file_path) is True:
+    with open(f'{csv_file_path}', 'r', newline = '') as oldf:
+        reader = csv.reader(oldf)
+        old_header = next(reader)
+        for row in reader:
+            prev_data.append(row)
+
+data_collection = prev_data + data_collection
+
+
+for idx, data in enumerate(data_collection):
+    data[1] = idx + 1
+
 
 # Create a csv file based on the data collected throughout the experiment
 with open(f'{csv_file_path}', 'w', newline ='') as f:
