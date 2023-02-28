@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="25b4cb23-0e62-498d-bb61-1c4ce8861963" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/TimedIntro.py" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/TimedIntro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/configuration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/configuration.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/soundData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/soundData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EEfRT/trialResult.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EEfRT/trialResult.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,18 +22,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1xgwYJuASAKESLY5By0Tzfhc9eM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RunManager">
     <configuration name="EEfRTapp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="EEfRTapp" />
@@ -102,6 +108,28 @@
       <workItem from="1637747245068" duration="221000" />
       <workItem from="1638255086645" duration="10881000" />
       <workItem from="1638852052160" duration="6823000" />
+      <workItem from="1639186872045" duration="149000" />
+      <workItem from="1641853010658" duration="28000" />
+      <workItem from="1642132052115" duration="1204000" />
+      <workItem from="1643263203300" duration="1390000" />
+      <workItem from="1644354636973" duration="451000" />
+      <workItem from="1644527011923" duration="2953000" />
+      <workItem from="1649786006639" duration="1883000" />
+      <workItem from="1650812918022" duration="625000" />
+      <workItem from="1650818893741" duration="2195000" />
+      <workItem from="1656016595593" duration="1530000" />
+      <workItem from="1657482951890" duration="413000" />
+      <workItem from="1667944630179" duration="192000" />
+      <workItem from="1669081486795" duration="152000" />
+      <workItem from="1673385845242" duration="151000" />
+      <workItem from="1673386136801" duration="39000" />
+      <workItem from="1674256838896" duration="29000" />
+      <workItem from="1674282154635" duration="844000" />
+      <workItem from="1674518223520" duration="265000" />
+      <workItem from="1674698351125" duration="484000" />
+      <workItem from="1676271524312" duration="881000" />
+      <workItem from="1677605597164" duration="1031000" />
+      <workItem from="1677620070258" duration="625000" />
     </task>
     <servers />
   </component>
@@ -118,7 +146,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EEfRTapp$EEfRTapp.coverage" NAME="EEfRTapp Coverage Results" MODIFIED="1630800447351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EEfRT" />
