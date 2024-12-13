@@ -1,5 +1,11 @@
 # EEfRTapp version 1.1
 
+Prerequisites:
+---
+Install python
+Install scipi in command prompt (py -m pip install scipy)
+Install yaml in command prompt (py -m pip install pyyaml)
+
 User Guide
 ---
 Download the code from the "code" button on the top right and follow the procedures below to start the program:
