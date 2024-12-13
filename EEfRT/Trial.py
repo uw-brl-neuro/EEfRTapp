@@ -169,6 +169,9 @@ class Task(tk.Frame):
         global task_level
         global current_reward
 
+        # Record the prompted reward level of this trial
+        master.record_data(current_reward)
+
         # Decide the reward and progress bar level based on the difficulty of the trial
         if task_level == 0:
             current_reward = 1
@@ -178,7 +181,7 @@ class Task(tk.Frame):
             maximum_level = master.get_hard_press_level()
             time_limit = master.get_hard_time_limit() * 1000 - 500
 
-        # Record the reward level of this trial
+        # Record the selected reward level of this trial
         master.record_data(current_reward)
 
         global indicator

@@ -1,4 +1,4 @@
-# EEfRTapp
+# EEfRTapp version 1.1
 
 User Guide
 ---
